@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>coachjay — Ruhe im Übergang | Executive- und Team-Coaching</title>
+<meta name="description" content="Executive- und Team-Coaching für die Phasen, in denen Klarheit knapp wird und der Einsatz hoch ist. Systemisch, menschzentriert, ohne Lärm.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101d33'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23c8642a'/%3E%3C/svg%3E">
+<style>
+/* Selbst gehostete Schriften (SIL OFL 1.1) — lokal mitgeliefert,
+   damit beim Seitenaufruf KEINE Verbindung zu Google entsteht (DSGVO). */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/cormorant-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/cormorant-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/cormorant-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/cormorant-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/cormorant-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/cormorant-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/cormorant-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/cormorant-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/hanken-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/hanken-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/hanken-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/hanken-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/hanken-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/hanken-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root{
+  --tief:#101d33;        /* dominante dunkle Fläche */
+  --tief-2:#16294a;      /* zweite dunkle Stufe */
+  --creme:#fcf6ea;
+  --creme-2:#f4ead6;
+  --tinte:#182b4b;
+  --tinte-weich:#56657f;
+  --terra:#c8642a;       /* echter Akzent, nicht schüchtern */
+  --terra-hell:#e08a4f;
+  --linie:#ebe0cd;
+  --linie-dunkel:rgba(252,246,234,.16);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --grotesk:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px;
+  --rand:clamp(22px,5vw,88px);
+  --kurve:cubic-bezier(.2,.7,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--creme);color:var(--tinte);font-family:var(--grotesk);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* ---------- Kopf ---------- */
+.kopf{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:20px var(--rand);transition:background .4s var(--kurve),box-shadow .4s var(--kurve)}
+.kopf.fest{background:rgba(252,246,234,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--linie)}
+.marke{font-family:var(--serif);font-size:23px;letter-spacing:.01em;text-decoration:none;color:var(--creme);transition:color .4s var(--kurve)}
+.kopf.fest .marke{color:var(--tinte)}
+.marke i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--terra);margin-left:7px;vertical-align:middle}
+.kopf-knopf{font-family:var(--grotesk);font-size:14.5px;font-weight:500;text-decoration:none;color:var(--creme);
+  border:1px solid rgba(252,246,234,.4);border-radius:999px;padding:10px 22px;transition:all .35s var(--kurve)}
+.kopf-knopf:hover{background:var(--creme);color:var(--tief);border-color:var(--creme)}
+.kopf.fest .kopf-knopf{color:var(--tinte);border-color:rgba(24,43,75,.28)}
+.kopf.fest .kopf-knopf:hover{background:var(--tinte);color:var(--creme);border-color:var(--tinte)}
+
+/* ---------- Bühne (Split-Hero) ---------- */
+.buehne{display:grid;grid-template-columns:1.08fr .92fr;min-height:100svh;background:var(--tief);color:var(--creme)}
+.buehne-text{display:flex;flex-direction:column;justify-content:center;padding:150px var(--sp-8) 90px var(--rand)}
+.augenbraue{font-size:12.5px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--terra-hell);margin-bottom:34px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(58px,8.4vw,132px);line-height:.93;letter-spacing:-.022em;color:var(--creme)}
+h1 em{font-style:italic;color:var(--terra-hell)}
+.blei{font-size:clamp(17px,1.35vw,20px);line-height:1.68;color:rgba(252,246,234,.76);max-width:31em;margin-top:34px}
+.tat{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:46px}
+.knopf{display:inline-flex;align-items:center;gap:12px;background:var(--terra);color:#fff;text-decoration:none;
+  font-size:16.5px;font-weight:600;padding:18px 36px;border-radius:999px;transition:transform .35s var(--kurve),background .35s}
+.knopf:hover{background:var(--terra-hell);transform:translateY(-2px)}
+.knopf span{transition:transform .35s var(--kurve)}
+.knopf:hover span{transform:translateX(5px)}
+.fein{font-size:14px;color:rgba(252,246,234,.55)}
+.buehne-bild{position:relative;overflow:hidden;background:#8fa3a5}
+.buehne-bild img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.buehne-bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--tief) 0%,rgba(16,29,51,.35) 26%,rgba(16,29,51,0) 62%)}
+
+/* ---------- Bänder ---------- */
+.band{padding:clamp(84px,10vw,152px) var(--rand)}
+.band-creme{background:var(--creme)}
+.band-creme-2{background:var(--creme-2)}
+.band-tief{background:var(--tief);color:var(--creme)}
+.innen{max-width:1180px;margin:0 auto}
+.augenbraue-d{color:var(--terra)}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.9vw,72px);line-height:1.03;letter-spacing:-.015em}
+h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);line-height:1.14;letter-spacing:-.01em}
+
+/* Wer — gespiegelter Vollbreiten-Split, Bild schneidet links an */
+.band-voll{padding:0}
+.wer{display:grid;grid-template-columns:.92fr 1.08fr;min-height:86svh;align-items:stretch}
+.wer-bild{position:relative;overflow:hidden;background:#8fa3a5;min-height:420px}
+.wer-bild img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;
+  filter:grayscale(1) contrast(1.06) brightness(1.02)}
+.wer-bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(270deg,var(--creme) 0%,rgba(252,246,234,.3) 24%,rgba(252,246,234,0) 58%)}
+.wer-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,7vw,110px) var(--rand)}
+.gross{font-family:var(--serif);font-size:clamp(32px,4.2vw,62px);line-height:1.08;letter-spacing:-.018em;font-weight:500;margin-top:24px}
+.wer p.fliess{margin-top:30px;color:var(--tinte-weich);max-width:40em}
+.zitat{margin-top:44px;padding-left:26px;border-left:4px solid var(--terra);
+  font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.7vw,40px);line-height:1.2;letter-spacing:-.01em}
+
+/* Angebot — dunkle Bänder mit Geister-Ziffern */
+.wege{margin-top:clamp(52px,6vw,92px);display:flex;flex-direction:column;
+  margin-left:calc(-1 * var(--rand));margin-right:calc(-1 * var(--rand))}
+.weg{position:relative;overflow:hidden;padding:clamp(58px,7vw,104px) var(--rand);
+  border-top:1px solid var(--linie-dunkel);transition:background .45s var(--kurve)}
+.weg:last-child{border-bottom:1px solid var(--linie-dunkel)}
+.weg:hover{background:rgba(200,100,42,.06)}
+.weg-nr{position:absolute;right:-.06em;top:50%;transform:translateY(-50%);
+  font-family:var(--serif);font-size:clamp(150px,23vw,360px);line-height:.78;font-weight:500;
+  color:transparent;-webkit-text-stroke:1.5px rgba(200,100,42,.34);pointer-events:none;user-select:none}
+.weg-innen{position:relative;max-width:36em}
+.weg h3{color:var(--creme);font-size:clamp(30px,3.4vw,52px)}
+.weg p{margin-top:20px;color:rgba(252,246,234,.72);font-size:17.5px}
+.weg .kern{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,34px);
+  line-height:1.24;color:var(--terra-hell)}
+.notiz{margin-top:38px;font-size:14.5px;color:rgba(252,246,234,.5)}
+
+/* Wie — Drei Säulen */
+.saeulen{margin-top:clamp(48px,6vw,84px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,4vw,68px)}
+.saeule{border-top:3px solid var(--terra);padding-top:22px}
+.saeule .idx{font-family:var(--serif);font-size:clamp(46px,5vw,82px);line-height:1;color:var(--terra);
+  display:block;margin-bottom:10px;font-weight:500}
+.saeule h3{font-size:clamp(26px,2.8vw,40px)}
+.saeule p{margin-top:16px;color:var(--tinte-weich)}
+
+/* Leitsatz — randlose Grossaussage */
+.leitsatz{margin:clamp(64px,8vw,124px) calc(-1 * var(--rand)) calc(-1 * clamp(84px,10vw,152px));
+  background:var(--tief);color:var(--creme);padding:clamp(64px,9vw,150px) var(--rand)}
+.leitsatz p.gross{font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(36px,7vw,110px);line-height:.98;letter-spacing:-.025em;margin-top:0}
+.leitsatz p.unten{margin-top:34px;color:rgba(252,246,234,.72);max-width:38em;
+  font-family:var(--grotesk);font-style:normal;font-size:clamp(17px,1.3vw,20px)}
+
+/* Einladung */
+.einladung{text-align:center;padding-top:clamp(96px,12vw,180px);padding-bottom:clamp(96px,12vw,180px)}
+.einladung h2{margin-top:30px;max-width:13em;margin-left:auto;margin-right:auto;
+  font-size:clamp(42px,7.2vw,108px);line-height:.99;letter-spacing:-.024em}
+.einladung h2 em{font-style:italic;color:var(--terra-hell)}
+.einladung p.blei{margin:36px auto 0;text-align:center}
+.einladung .tat{justify-content:center}
+.direkt{margin-top:30px;font-size:15.5px;color:rgba(252,246,234,.6)}
+.direkt a{color:var(--terra-hell);text-decoration:underline;text-underline-offset:4px}
+
+/* Fuß */
+.fuss{background:var(--tief);color:rgba(252,246,234,.62);padding:52px var(--rand);
+  border-top:1px solid var(--linie-dunkel);display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;font-size:14.5px}
+.fuss .marke{color:var(--creme);font-size:20px}
+.fuss nav{display:flex;gap:26px}
+.fuss a{text-decoration:none}
+.fuss a:hover{color:var(--creme)}
+
+/* ---------- Progressive Enhancement: Reveal ---------- */
+/* Kerninhalt ist IMMER sichtbar. Erst wenn JS läuft, wird kurz versteckt und eingeblendet. */
+.js-an .auf{opacity:0;transform:translateY(44px)}
+.js-an .auf.da{opacity:1;transform:none;transition:opacity .9s var(--kurve),transform .9s var(--kurve)}
+@media (prefers-reduced-motion:reduce){
+  .js-an .auf{opacity:1!important;transform:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width:900px){
+  .buehne{grid-template-columns:1fr;min-height:0}
+  .buehne-bild{height:62vh;order:-1}
+  .buehne-bild img{object-position:50% 18%}
+  .buehne-bild::after{background:linear-gradient(0deg,var(--tief) 0%,rgba(16,29,51,.28) 42%,rgba(16,29,51,0) 78%)}
+  .buehne-text{padding:44px var(--rand) 76px}
+  .wer{grid-template-columns:1fr;min-height:0}
+  .wer-bild{height:58vh;min-height:0}
+  .wer-bild img{object-position:50% 16%}
+  .wer-bild::after{background:linear-gradient(0deg,var(--creme) 0%,rgba(252,246,234,.25) 40%,rgba(252,246,234,0) 76%)}
+  .wer-text{padding:40px var(--rand) 76px}
+  .saeulen{grid-template-columns:1fr;gap:44px}
+  .weg-nr{font-size:clamp(120px,34vw,220px);opacity:.7}
+  .kopf{padding:14px var(--rand)}
+  .kopf .marke{color:var(--creme)}
+}
+@media (max-width:480px){
+  .knopf{width:100%;justify-content:center}
+  .tat{gap:16px}
+  .weg-nr{opacity:.5}
+}
+</style>
+</head>
+<body>
+
+<header class="kopf" id="kopf">
+  <a class="marke" href="#top">coachjay<i></i></a>
+  <a class="kopf-knopf" href="#kontakt">Erstgespräch</a>
+</header>
+
+<main id="top">
+
+  <!-- Bühne -->
+  <section class="buehne">
+    <div class="buehne-text">
+      <p class="augenbraue">Senior Change Coach</p>
+      <h1>Ruhe im<br><em>Übergang.</em></h1>
+      <p class="blei">Executive- und Team-Coaching für die Phasen, in denen Klarheit knapp wird und der Einsatz hoch ist. Systemisch, menschzentriert, ohne Lärm.</p>
+      <div class="tat">
+        <a class="knopf" href="#kontakt">Erstgespräch <span>&rarr;</span></a>
+        <span class="fein">Unverbindlich. 45 Minuten. Vertraulich.</span>
+      </div>
+    </div>
+    <div class="buehne-bild">
+      <img src="portrait-jay.jpg" alt="Jay Manuzon, Senior Change Coach" width="1050" height="1400">
+    </div>
+  </section>
+
+  <!-- Wer -->
+  <section class="band band-creme band-voll" id="wer">
+    <div class="wer">
+      <div class="wer-bild">
+        <img src="portrait-jay.jpg" alt="Portrait Jay Manuzon" width="1050" height="1400" loading="lazy">
+      </div>
+      <div class="wer-text">
+        <p class="augenbraue augenbraue-d auf">Wer hier coacht</p>
+        <p class="gross auf">Fünfzehn Jahre in einem DAX-40-Konzern, zuletzt Senior Program Lead in einem konzernweiten Change-Programm. Diplom-Wirtschaftsingenieur.</p>
+        <p class="fliess auf">Ich begleite Führungskräfte und Teams durch die Übergänge, die sich nicht von allein souverän durchsteuern lassen. Humanistisch, menschenzentriert, ohne Druck. Die Erfahrung steht im Hintergrund, im Vordergrund stehen Sie.</p>
+        <p class="zitat auf">Ich manage Komplexität, nicht Technologie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Angebot -->
+  <section class="band band-tief" id="angebot">
+    <div class="innen">
+      <p class="augenbraue auf">Was ich anbiete</p>
+      <h2 class="auf" style="margin-top:22px;max-width:14em">Zwei klare Wege. Nicht zehn.</h2>
+
+      <div class="wege">
+        <article class="weg auf">
+          <span class="weg-nr" aria-hidden="true">01</span>
+          <div class="weg-innen">
+            <h3>1:1 Executive-Coaching</h3>
+            <p>Für Führungskräfte in Druck-, Übergangs- oder Entscheidungsphasen. Ein Sparringspartner auf Augenhöhe, wenn niemand sonst im Raum unbeteiligt ist.</p>
+            <p class="kern">Der reife Kern: zentriert bleiben, wenn der Raum heiß wird.</p>
+          </div>
+        </article>
+
+        <article class="weg auf">
+          <span class="weg-nr" aria-hidden="true">02</span>
+          <div class="weg-innen">
+            <h3>Team-Coaching</h3>
+            <p>Für Leadership-Teams und Projektteams, die als System besser zusammenfinden wollen. Vom Symptom zur Ursache statt zur Schnelllösung.</p>
+            <p class="kern">Zusammenarbeit, die unter Last trägt statt zu reißen.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="notiz auf">Reines Coaching. Kein Beratungs- oder KI-Angebot auf dieser Seite.</p>
+    </div>
+  </section>
+
+  <!-- Wie -->
+  <section class="band band-creme-2" id="wie">
+    <div class="innen">
+      <p class="augenbraue augenbraue-d auf">Wie ich arbeite</p>
+
+      <div class="saeulen">
+        <div class="saeule auf">
+          <span class="idx">01</span>
+          <h3>Präsenz</h3>
+          <p>Die zentrierte Mitte unter Druck. Ich bleibe da, wenn es eng wird, und halte den Raum, damit Sie klar denken können.</p>
+        </div>
+        <div class="saeule auf">
+          <span class="idx">02</span>
+          <h3>Handwerk</h3>
+          <p>Systemisch fundiert, über Jahre in echter Konzernpraxis geschärft. Kein Rezept von der Stange, sondern das passende Werkzeug zur Lage.</p>
+        </div>
+        <div class="saeule auf">
+          <span class="idx">03</span>
+          <h3>Raum</h3>
+          <p>Der bewusst zugelassene Abstand zwischen den Dingen. Kein hektisches Weiter, sondern der würdige Übergang, der trägt.</p>
+        </div>
+      </div>
+
+      <div class="leitsatz auf">
+        <p class="gross">Breakdown before Breakthrough.</p>
+        <p class="unten">Veränderung, die trägt, beginnt oft mit ehrlichem Loslassen. Erst der bewusst zugelassene Raum macht das Neue möglich.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Einladung -->
+  <section class="band band-tief einladung" id="kontakt">
+    <div class="innen">
+      <p class="augenbraue auf">Einladung</p>
+      <h2 class="auf">Wenn der <em>Übergang</em> ansteht, reden wir.</h2>
+      <p class="blei auf">Ein ruhiges Erstgespräch, um zu spüren, ob es passt. Ohne Verpflichtung, ohne Verkauf.</p>
+      <div class="tat auf">
+        <a class="knopf" href="mailto:hallo@coachjay.de?subject=Erstgespr%C3%A4ch">Erstgespräch buchen <span>&rarr;</span></a>
+      </div>
+      <p class="direkt auf">oder direkt <a href="mailto:hallo@coachjay.de">hallo@coachjay.de</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div>
+    <span class="marke">coachjay<i></i></span>
+    <div style="margin-top:6px">Coaching mit Präsenz, Handwerk und Raum.</div>
+  </div>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var d = document;
+  d.body.classList.add('js-an');
+
+  // Reveal — endet IMMER bei voller Deckkraft, mit Sicherheitsnetz
+  var ziele = [].slice.call(d.querySelectorAll('.auf'));
+  function alleZeigen(){ ziele.forEach(function(el){ el.classList.add('da'); }); }
+
+  if (!('IntersectionObserver' in window)) { alleZeigen(); return; }
+
+  var beob = new IntersectionObserver(function(eintraege){
+    eintraege.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('da'); beob.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+  ziele.forEach(function(el){ beob.observe(el); });
+  setTimeout(alleZeigen, 2500); // nie eine dauerhaft blasse Seite
+
+  // Kopf wird fest, sobald die Bühne durch ist
+  var kopf = d.getElementById('kopf');
+  var buehne = d.querySelector('.buehne');
+  function pruefe(){
+    var grenze = buehne ? buehne.offsetHeight - 90 : 200;
+    kopf.classList.toggle('fest', window.scrollY > grenze);
+  }
+  pruefe();
+  window.addEventListener('scroll', pruefe, { passive: true });
+})();
+</script>
+</body>
+</html>
