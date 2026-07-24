@@ -257,6 +257,31 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
 .direkt{margin-top:30px;font-size:15.5px;color:rgba(252,246,234,.6)}
 .direkt a{color:var(--terra-hell);text-decoration:underline;text-underline-offset:4px}
 
+/* Anfrage-Bogen */
+.bogen{max-width:680px;margin:44px auto 0;text-align:left}
+.feld-paar{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feld{display:block;margin-top:18px}
+.feld span{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(252,246,234,.62);margin-bottom:8px}
+.feld span b{color:var(--terra-hell);font-weight:400}
+.feld input,.feld textarea{width:100%;font:inherit;font-size:16.5px;color:var(--creme);
+  background:rgba(252,246,234,.05);border:1px solid rgba(252,246,234,.22);border-radius:12px;
+  padding:14px 16px;transition:border-color .3s var(--kurve),background .3s var(--kurve)}
+.feld textarea{resize:vertical;min-height:118px;line-height:1.55}
+.feld input::placeholder,.feld textarea::placeholder{color:rgba(252,246,234,.32)}
+.feld input:focus,.feld textarea:focus{outline:none;border-color:var(--terra);background:rgba(252,246,234,.09)}
+.feld input.schief,.feld textarea.schief{border-color:#e2603c}
+/* Honeypot: fuer Menschen unsichtbar, fuer Bots ausfuellbar — bleibt aber im Layout-Kasten,
+   damit die 390px-Sonde keinen Ueberhang meldet (kein Offscreen-Verschieben). */
+.honig{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#bogen button{margin-top:26px;border:0;cursor:pointer;font-family:var(--grotesk)}
+#bogen button[disabled]{opacity:.55;cursor:default}
+.hinweis{margin-top:16px;font-size:14.5px;color:rgba(252,246,234,.6);line-height:1.55}
+.hinweis.klein{font-size:13px;color:rgba(252,246,234,.42)}
+.hinweis a{color:var(--terra-hell);text-decoration:underline;text-underline-offset:3px}
+.hinweis.gut{color:#8fd6a8}
+.hinweis.schlecht{color:#f0a48c}
+
 /* Fuß */
 .fuss{background:var(--tief);color:rgba(252,246,234,.62);padding:52px var(--rand);
   border-top:1px solid var(--linie-dunkel);display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;font-size:14.5px}
@@ -287,6 +312,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
   .wer-bild::after{background:linear-gradient(0deg,var(--creme) 0%,rgba(252,246,234,.25) 40%,rgba(252,246,234,0) 76%)}
   .wer-text{padding:40px var(--rand) 76px}
   .saeulen{grid-template-columns:1fr;gap:44px}
+  .feld-paar{grid-template-columns:1fr;gap:0}
   .weg-nr{font-size:clamp(120px,34vw,220px);opacity:.7}
   .kopf{padding:14px var(--rand)}
   .kopf .marke{color:var(--creme)}
@@ -404,10 +430,47 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
       <p class="augenbraue auf">Einladung</p>
       <h2 class="auf">Wenn der <em>Übergang</em> ansteht, reden wir.</h2>
       <p class="blei auf">Ein ruhiges Erstgespräch, um zu spüren, ob es passt. Ohne Verpflichtung, ohne Verkauf.</p>
-      <div class="tat auf">
-        <a class="knopf" href="mailto:jay@aivantum.com?subject=Erstgespr%C3%A4ch">Erstgespräch buchen <span>&rarr;</span></a>
-      </div>
-      <p class="direkt auf">oder direkt <a href="mailto:jay@aivantum.com">jay@aivantum.com</a></p>
+
+      <form class="bogen auf" id="bogen" novalidate>
+        <div class="feld-paar">
+          <label class="feld">
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" placeholder="optional">
+          </label>
+          <label class="feld">
+            <span>E-Mail <b>*</b></span>
+            <input type="email" name="email" autocomplete="email" required placeholder="damit ich antworten kann">
+          </label>
+        </div>
+        <div class="feld-paar">
+          <label class="feld">
+            <span>Telefon</span>
+            <input type="tel" name="telefon" autocomplete="tel" placeholder="optional">
+          </label>
+          <label class="feld">
+            <span>Wann passt es Ihnen?</span>
+            <input type="text" name="termin" placeholder="z. B. vormittags, ab nächster Woche">
+          </label>
+        </div>
+        <label class="feld">
+          <span>Worum geht es?</span>
+          <textarea name="msg" rows="4" placeholder="Ein paar Sätze genügen. Was gerade ansteht, reicht völlig."></textarea>
+        </label>
+
+        <div class="honig" aria-hidden="true">
+          <label>Bitte nicht ausfüllen<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <button class="knopf" type="submit" id="senden">Erstgespräch anfragen <span>&rarr;</span></button>
+        <p class="hinweis" id="bogen-status" role="status" aria-live="polite"></p>
+        <p class="hinweis klein">Ihre Angaben nutze ich ausschließlich für die Rückmeldung und gebe sie nicht weiter. Kein Newsletter. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </form>
+
+      <noscript>
+        <p class="direkt">Für das Formular wird JavaScript benötigt. Schreiben Sie mir stattdessen direkt an <a href="mailto:jay@aivantum.com">jay@aivantum.com</a> oder rufen Sie an: <a href="tel:+4915254925487">+49 152 54925487</a>.</p>
+      </noscript>
+
+      <p class="direkt auf">oder direkt <a href="mailto:jay@aivantum.com">jay@aivantum.com</a> · <a href="tel:+4915254925487">+49 152 54925487</a></p>
     </div>
   </section>
 
@@ -453,6 +516,76 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
   }
   pruefe();
   window.addEventListener('scroll', pruefe, { passive: true });
+
+  // Anfrage-Bogen -> Worker (Formular ist der Hauptweg, mailto nur No-JS-Rueckfall)
+  var ENDPUNKT = 'https://aivantum-check.aivantum.workers.dev/kontakt';
+  var bogen = d.getElementById('bogen');
+  if (!bogen) return;
+  var status = d.getElementById('bogen-status');
+  var knopf  = d.getElementById('senden');
+
+  function sag(text, art){
+    status.textContent = text;
+    status.className = 'hinweis' + (art ? ' ' + art : '');
+  }
+  function gueltig(el){
+    if (el.name === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+    return true;
+  }
+
+  bogen.addEventListener('submit', function(e){
+    e.preventDefault();
+    var mail = bogen.elements['email'];
+    mail.classList.remove('schief');
+    if (!gueltig(mail)) {
+      mail.classList.add('schief'); mail.focus();
+      sag('Bitte eine gültige E-Mail-Adresse angeben — sonst kann ich nicht antworten.', 'schlecht');
+      return;
+    }
+
+    var daten = {
+      art: 'coachjay',
+      name: bogen.elements['name'].value.trim(),
+      email: mail.value.trim(),
+      telefon: bogen.elements['telefon'].value.trim(),
+      termin: bogen.elements['termin'].value.trim(),
+      msg: bogen.elements['msg'].value.trim(),
+      website: bogen.elements['website'].value,
+      source: 'coachjay.de'
+    };
+
+    knopf.disabled = true;
+    sag('Wird gesendet …');
+
+    fetch(ENDPUNKT, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(daten)
+    })
+    .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
+    .then(function(res){
+      if (res.ok && res.j && res.j.ok) {
+        bogen.reset();
+        sag('Angekommen. Sie bekommen gleich eine Bestätigung per Mail — ich melde mich in der Regel innerhalb von zwei Werktagen.', 'gut');
+        knopf.textContent = 'Danke';
+        return;
+      }
+      knopf.disabled = false;
+      var code = (res.j && res.j.error) || '';
+      if (code === 'rate_limited') {
+        sag('Es kamen gerade viele Anfragen von dieser Verbindung. Bitte in einer Stunde nochmal — oder direkt an jay@aivantum.com.', 'schlecht');
+      } else if (code === 'email_invalid') {
+        mail.classList.add('schief');
+        sag('Diese E-Mail-Adresse sieht nicht gültig aus.', 'schlecht');
+      } else {
+        sag('Das Senden hat nicht geklappt. Schreiben Sie mir bitte direkt an jay@aivantum.com oder rufen Sie an: +49 152 54925487.', 'schlecht');
+      }
+    })
+    .catch(function(){
+      knopf.disabled = false;
+      sag('Keine Verbindung zum Server. Schreiben Sie mir bitte direkt an jay@aivantum.com oder rufen Sie an: +49 152 54925487.', 'schlecht');
+    });
+  });
 })();
 </script>
 </body>
