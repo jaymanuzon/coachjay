@@ -1,10 +1,10 @@
 # Deploy-Runbook — coachjay.de
 
-**Stand:** 2026-07-25 · **Status:** deploy-ready, wartet auf Jays Go
+**Stand:** 2026-07-25 · **Status:** ✅ LIVE — https://coachjay.de (GitHub Pages, HTTPS erzwungen)
 **Muster:** wie `itr.aivantum.com` / `ai-act.aivantum.com` (GitHub Pages + DNS beim Registrar)
 **Ein Unterschied, der zählt:** coachjay.de ist eine **Apex-Domain**, keine Subdomain. Apex kann kein CNAME — es braucht **A-Records**. Das ist der einzige Punkt, an dem dieses Runbook von den aivantum-Subdomains abweicht.
 
-Alles unter „Vorbereitet" ist erledigt und lokal geprüft. Alles unter „Deine Schritte" geht nach draußen und passiert nur auf Ansage.
+Deploy am 25.07. auf Jays Go vollzogen. Repo: `github.com/jaymanuzon/coachjay`. Das Runbook bleibt als Nachvollzug und für den nächsten Deploy stehen.
 
 ---
 
@@ -25,7 +25,7 @@ Alles unter „Vorbereitet" ist erledigt und lokal geprüft. Alles unter „Dein
 | No-JS | Kerninhalt vollständig statisch: **2.119 Zeichen** ohne JavaScript lesbar (die Ursprungsfassung hatte 76) |
 | `robots` | **kein** `noindex` mehr — beim Deploy ist das die echte Seite; ein vergessenes `noindex` auf dem Impressum wäre ein stiller Fehler |
 
-## Deine Schritte (hartes Tor)
+## Die Schritte (am 25.07. so gefahren)
 
 ### 1. Repo + Push
 
@@ -69,7 +69,7 @@ Zusätzlich im Browser: Portrait lädt, Schriften sind Cormorant/Hanken (nicht G
 
 ### 5. Nachziehen
 
-- Fläche ins `flaechen-register.json` aufnehmen → `flaechen-register-build.py` misst selbst per curl
+- ~~Fläche ins `flaechen-register.json`~~ — die Datei existiert nicht (mehr), obwohl die Root-CLAUDE.md sie als Quelle führt. Offener Befund.
 - Lagezentrum-Faden `coachjay-de-coaching-marke-2026-07-23` nachziehen
 - Externer-Endpunkt-Logbuch: was ist am Endpunkt jetzt anders
 
@@ -79,9 +79,8 @@ Zusätzlich im Browser: Portrait lädt, Schriften sind Cormorant/Hanken (nicht G
 
 | Punkt | Warum |
 | :-- | :-- |
-| **Rufnummer** | Steht als `[🔲 …]` im Impressum. § 5 DDG verlangt neben der E-Mail einen zweiten unmittelbaren Weg — eine erfundene Nummer wäre schlimmer als eine offene Stelle. |
 | **Kontaktformular** | Jay will Telefon *und* Formular. Wiederverwendbares Muster liegt: `Productization HQ/…/check-aivantum-worker/`. Braucht Cloudflare-Account + Resend-Key + Worker-Deploy. Bis dahin ist `mailto:` der einzige Weg — auf einer Geld-Seite nur als Zwischenstand vertretbar. |
-| **Postfach `hallo@coachjay.de`** | Existenz unbestätigt (MX zeigen auf `secureserver.net`, das ist df/GoDaddy-Standard und sagt nichts über eine angelegte Mailbox). Läuft im anderen Fenster. |
+| **Kontakt-Adresse** | `hallo@coachjay.de` war bei DomainFactory nur kostenpflichtig zu haben. Seit 25.07. steht überall Jays bestehende Adresse **jay@aivantum.com**. |
 | **DENIC-Kontaktbestätigung** | Vier df-Mahnungen im Mai 2026 („Aktion erforderlich"). DENIC zeigt aktuell `Status: connect`, also nicht gesperrt — trotzdem prüfen. Der Bestätigungslink ist Jays Identitätsbestätigung, nicht meine. |
 | **Anwaltliche Abnahme** | Impressum und Datenschutz sind Haus-Entwurfsstand mit Draft-Banner. |
 | **Kein `www`-Redirect erzwungen** | GitHub Pages leitet `www` → Apex automatisch um, sobald der `www`-CNAME steht. Nichts zusätzlich nötig. |
