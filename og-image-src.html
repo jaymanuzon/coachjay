@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>og-image-src (Renderquelle, keine öffentliche Seite)</title>
+<style>
+/* Selbst gehostete Schriften — identische Quellen wie index.html */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;
+  src:url(fonts/cormorant-italic-latin.woff2) format('woff2');}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;
+  src:url(fonts/cormorant-latin.woff2) format('woff2');}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:500;font-display:swap;
+  src:url(fonts/hanken-latin.woff2) format('woff2');}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:600;font-display:swap;
+  src:url(fonts/hanken-latin.woff2) format('woff2');}
+
+:root{
+  --tief:#101d33;
+  --creme:#fcf6ea;
+  --terra:#c8642a;
+  --terra-hell:#e08a4f;
+  --tinte-weich:#56657f;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --grotesk:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{background:var(--tief);color:var(--creme);font-family:var(--grotesk);-webkit-font-smoothing:antialiased}
+
+.buehne{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1.05fr .95fr}
+.text{display:flex;flex-direction:column;justify-content:center;padding:0 0 0 76px}
+.marke{font-family:var(--serif);font-size:26px;letter-spacing:.01em;margin-bottom:40px;display:flex;align-items:center}
+.marke i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--terra);margin-left:8px}
+h1{font-family:var(--serif);font-weight:500;font-size:80px;line-height:.96;letter-spacing:-.02em;color:var(--creme)}
+h1 em{font-style:italic;color:var(--terra-hell)}
+.blei{font-family:var(--grotesk);font-size:20px;line-height:1.55;color:rgba(252,246,234,.76);max-width:27em;margin-top:26px}
+.fuss{margin-top:40px;font-size:16px;color:rgba(252,246,234,.55);letter-spacing:.02em}
+.fuss b{color:var(--terra-hell);font-weight:600}
+
+.bild{position:relative;overflow:hidden;background:#8fa3a5}
+.bild img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:grayscale(1) contrast(1.06) brightness(1.02)}
+.bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--tief) 0%,rgba(16,29,51,.32) 24%,rgba(16,29,51,0) 58%)}
+</style>
+</head>
+<body>
+<div class="buehne">
+  <div class="text">
+    <div class="marke">coachjay<i></i></div>
+    <h1>Ruhe im<br><em>Übergang.</em></h1>
+    <p class="blei">Executive- und Team-Coaching für die Phasen, in denen Klarheit knapp wird und der Einsatz hoch ist.</p>
+    <p class="fuss"><b>coachjay.de</b> · Jay Manuzon, Senior Change Coach</p>
+  </div>
+  <div class="bild">
+    <img src="portrait-jay.jpg" alt="">
+  </div>
+</div>
+</body>
+</html>
