@@ -244,9 +244,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
 .weg p{margin-top:20px;color:rgba(252,246,234,.72);font-size:17.5px}
 .weg .kern{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,34px);
   line-height:1.24;color:var(--terra-hell)}
-.notiz{margin-top:38px;font-size:14.5px;color:rgba(252,246,234,.5);line-height:1.65}
-.notiz a{color:rgba(252,246,234,.82);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.notiz a:hover{color:rgba(252,246,234,1)}
+.notiz{margin-top:38px;font-size:14.5px;color:rgba(252,246,234,.5)}
 
 /* Wie — Drei Säulen */
 .saeulen{margin-top:clamp(48px,6vw,84px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,4vw,68px)}
@@ -409,8 +407,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
         </article>
       </div>
 
-      <p class="notiz auf">Reines Coaching auf dieser Seite. Für Teams, Betriebe und alles rund um KI: <a href="https://neu.aivantum.com">aivantum.com</a>.<br>
-      Du steckst mitten in einem Übergang und bist noch nicht bei einem Erstgespräch? <a href="https://restart.aivantum.com">restart.aivantum.com</a> führt durch sieben Schritte und einen kurzen Selbst-Check. Kostenfrei, ohne Anmeldung.</p>
+      <p class="notiz auf">Reines Coaching. Kein Beratungs- oder KI-Angebot auf dieser Seite.</p>
     </div>
   </section>
 
