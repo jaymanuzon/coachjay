@@ -340,12 +340,85 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
   .tat{gap:16px}
   .weg-nr{opacity:.5}
 }
+
+/* ===== 19.09.: Einstiege (Weiche A im Hero · Tueren-Band B · Fuss-Adressen) ===== */
+.weiche{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+.weiche-label{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(251,247,239,.5);margin-right:4px}
+.weiche a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:rgba(251,247,239,.92);
+  font-size:15px;line-height:1.3;padding:9px 16px;border-radius:999px;border:1px solid var(--linie-dunkel);
+  background:rgba(251,247,239,.04);transition:border-color .3s,background .3s}
+.weiche a small{display:none}
+.weiche a .pfeil{color:var(--terra-hell);transition:transform .3s}
+.weiche a:hover{border-color:var(--terra-hell);background:rgba(251,247,239,.08)}
+.weiche a:hover .pfeil{transform:translateX(4px)}
+@media (max-width:620px){
+  .weiche{flex-direction:column;align-items:stretch;gap:0;margin-top:34px;border-top:1px solid var(--linie-dunkel)}
+  .weiche-label{padding:16px 0 4px}
+  .weiche a{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;
+    border:0;border-bottom:1px solid var(--linie-dunkel);border-radius:0;background:none;
+    padding:14px 0;min-height:60px;font-size:16.5px}
+  .weiche a b{font-weight:600}
+  .weiche a small{display:block;grid-column:1;font-size:14px;color:rgba(251,247,239,.6);margin-top:3px}
+  .weiche a .pfeil{grid-column:2;grid-row:1 / span 2;font-size:20px}
+}
+
+.tueren{background:var(--creme-2);padding:clamp(54px,7vw,96px) var(--rand)}
+.tueren .innen{max-width:1180px;margin:0 auto}
+.tueren-kopf{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra)}
+.tueren-liste{margin-top:26px;border-top:1px solid var(--linie)}
+.tuer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) auto;align-items:center;gap:10px 36px;
+  padding:26px 4px;border-bottom:1px solid var(--linie);text-decoration:none;color:var(--tinte);
+  transition:background .3s,padding .3s}
+.tuer:hover{background:rgba(255,255,255,.45);padding-left:14px}
+.tuer-titel{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,38px);line-height:1.1;letter-spacing:-.01em}
+.tuer-text{font-size:16px;line-height:1.55;color:var(--tinte-weich)}
+.tuer-text .adresse{display:block;margin-top:6px;font-size:13.5px;font-weight:600;letter-spacing:.03em;color:var(--terra)}
+.tuer-text .hier{display:block;margin-top:6px;font-size:13.5px;font-weight:600;color:var(--tinte-weich);opacity:.8}
+.tuer-pfeil{font-size:24px;color:var(--terra);transition:transform .3s}
+.tuer:hover .tuer-pfeil{transform:translateX(5px)}
+.tuer.ist-hier:hover .tuer-pfeil{transform:translateY(4px)}
+@media (max-width:760px){
+  .tuer{grid-template-columns:1fr auto;gap:6px 16px;padding:22px 0;min-height:64px}
+  .tuer:hover{padding-left:0}
+  .tuer-titel{grid-column:1;font-size:27px}
+  .tuer-text{grid-column:1;font-size:15.5px}
+  .tuer-pfeil{grid-column:2;grid-row:1 / span 2}
+}
+
+/* Variante C: Einstiege in der Kopfzeile (Desktop), aufklappbar ohne JavaScript */
+.kopf-wege{margin-left:auto;margin-right:6px;position:relative}
+.kopf-wege summary{list-style:none;cursor:pointer;font-size:14.5px;font-weight:600;color:var(--creme);
+  padding:9px 14px;border-radius:999px;transition:background .3s,color .3s}
+.kopf-wege summary::-webkit-details-marker{display:none}
+.kopf-wege summary::after{content:"";display:inline-block;width:7px;height:7px;margin-left:9px;
+  border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-3px) rotate(45deg);
+  transition:transform .3s}
+.kopf-wege[open] summary::after{transform:translateY(1px) rotate(-135deg)}
+.kopf-wege summary:hover{background:rgba(251,247,239,.1)}
+.kopf.fest .kopf-wege summary{color:var(--tinte)}
+.kopf.fest .kopf-wege summary:hover{background:rgba(22,35,60,.06)}
+.kopf-panel{position:absolute;right:0;top:calc(100% + 12px);width:390px;background:var(--creme);color:var(--tinte);
+  border:1px solid var(--linie);border-radius:18px;padding:8px;box-shadow:0 24px 50px -24px rgba(10,18,32,.55)}
+.kopf-panel a{display:block;padding:14px 16px;border-radius:12px;text-decoration:none;color:var(--tinte)}
+.kopf-panel a:hover{background:var(--creme-2)}
+.kopf-panel b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15}
+.kopf-panel small{display:block;margin-top:4px;font-size:14px;line-height:1.45;color:var(--tinte-weich)}
+.kopf-panel .adresse{display:block;margin-top:6px;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--terra)}
+@media (max-width:760px){ .kopf-wege{display:none} }
+
+.fuss-einstiege{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;
+  padding-top:16px;border-top:1px solid var(--linie-dunkel);font-size:14.5px}
+.fuss-einstiege span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+.fuss-einstiege a{font-weight:600;letter-spacing:.01em}
+@media (max-width:520px){ .fuss-einstiege{flex-direction:column;align-items:flex-start;gap:10px} }
 </style>
 </head>
 <body>
 
 <header class="kopf" id="kopf">
   <a class="marke" href="#top">coachjay<i></i></a>
+  <details class="kopf-wege"><summary>Einstiege</summary><div class="kopf-panel"><a href="https://restart.coachjay.de/"><b>Mitten im Übergang</b><small>Sieben Schritte und ein kurzer Selbst-Check. Kostenfrei, ohne Anmeldung.</small><span class="adresse">coachjay.de/restart</span></a><a href="https://einstieg.coachjay.de/"><b>Vor der ersten Stelle</b><small>Studium, Abschluss, Berufseinstieg: auf dem Niveau anfangen, das die erste Stelle heute verlangt.</small><span class="adresse">coachjay.de/einstieg</span></a></div></details>
   <a class="kopf-knopf" href="#kontakt">Erstgespräch</a>
 </header>
 
@@ -361,6 +434,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
         <a class="knopf" href="#kontakt">Erstgespräch <span>&rarr;</span></a>
         <span class="fein">Unverbindlich. 45 Minuten. Vertraulich.</span>
       </div>
+      <nav class="weiche auf" aria-label="Andere Einstiege"><span class="weiche-label">Anderer Einstieg</span><a href="https://restart.coachjay.de/"><b>Mitten im Übergang</b><small>Sieben Schritte und ein kurzer Selbst-Check. Kostenfrei, ohne Anmeldung.</small><span class="pfeil" aria-hidden="true">&rarr;</span></a><a href="https://einstieg.coachjay.de/"><b>Vor der ersten Stelle</b><small>Studium, Abschluss, Berufseinstieg: auf dem Niveau anfangen, das die erste Stelle heute verlangt.</small><span class="pfeil" aria-hidden="true">&rarr;</span></a></nav>
     </div>
     <div class="buehne-bild">
       <img src="portrait-jay.jpg" alt="Jay Manuzon, Executive- und Team-Coach" width="1050" height="1400">
@@ -412,9 +486,9 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
 
       <p class="partner auf">Bei größeren Vorhaben arbeite ich mit ausgewählten Partnern, die den gleichen Anspruch haben und mit denen ich schon erfolgreich zusammengearbeitet habe.</p>
 
-      <p class="notiz auf">Reines Coaching auf dieser Seite. Für Teams, Betriebe und alles rund um KI: <a href="https://neu.aivantum.com">aivantum.com</a>.<br>
-      Du steckst mitten in einem Übergang und bist noch nicht bei einem Erstgespräch? <a href="https://restart.coachjay.de">restart.coachjay.de</a> führt durch sieben Schritte und einen kurzen Selbst-Check. Kostenfrei, ohne Anmeldung.<br>
-      Und wenn die erste Stelle noch vor dir liegt — Studium, Abschluss, Berufseinstieg: <a href="https://einstieg.coachjay.de">einstieg.coachjay.de</a>.</p>
+      <p class="notiz auf">Reines Coaching auf dieser Seite. Für Teams, Betriebe und alles rund um KI: <a href="https://aivantum.com">aivantum.com</a>.<br>
+      Du steckst mitten in einem Übergang und bist noch nicht bei einem Erstgespräch? <a href="https://restart.coachjay.de">coachjay.de/restart</a> führt durch sieben Schritte und einen kurzen Selbst-Check. Kostenfrei, ohne Anmeldung.<br>
+      Und wenn die erste Stelle noch vor dir liegt — Studium, Abschluss, Berufseinstieg: <a href="https://einstieg.coachjay.de">coachjay.de/einstieg</a>.</p>
     </div>
   </section>
 
@@ -506,11 +580,12 @@ h3{font-family:var(--serif);font-weight:500;font-size:clamp(27px,2.5vw,36px);lin
     <div style="margin-top:6px">Coaching mit Präsenz, Handwerk und Raum.</div>
   </div>
   <nav>
-    <a href="https://neu.aivantum.com">AIVantum</a>
+    <a href="https://aivantum.com">AIVantum</a>
     <a href="https://www.linkedin.com/in/jay-manuzon-19b960152/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="impressum.html">Impressum</a>
     <a href="datenschutz.html">Datenschutz</a>
   </nav>
+  <div class="fuss-einstiege"><span>Direkt</span><a href="https://restart.coachjay.de/">coachjay.de/restart</a><a href="https://einstieg.coachjay.de/">coachjay.de/einstieg</a></div>
 </footer>
 
 <script>
