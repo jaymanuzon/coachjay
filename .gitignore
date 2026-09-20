@@ -1,0 +1,5 @@
+
+# Entwürfe von Lesen-Seiten: nie veröffentlichen (Freigabe = umbenennen nach <slug>.html)
+*.entwurf.html
+# Sicherungen aus Umbau-Läufen: nie veröffentlichen
+_alt/
